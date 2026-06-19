@@ -6,14 +6,18 @@
     <title>Tutorial: Guante 3D</title>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #1a1a1a; color: white; padding: 20px; }
+        body { font-family: Arial, sans-serif; background-color: #1a1a1a; color: white; padding: 20px; margin: 0; }
         nav { margin-bottom: 20px; }
         nav a { color: #00ffcc; text-decoration: none; font-weight: bold; }
         .container { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
-        .visor-3d { flex: 1; min-width: 350px; background: #000; border-radius: 10px; border: 1px solid #444; }
-        .instrucciones { flex: 1; min-width: 350px; background: #2a2a2a; padding: 25px; border-radius: 10px; line-height: 1.6; }
-        .instrucciones h2 { color: #00ffcc; border-bottom: 1px solid #444; padding-bottom: 10px; }
+        .visor-3d { flex: 1; min-width: 350px; background: #000; border-radius: 10px; border: 1px solid #444; position: relative;}
+        .visor-label { position: absolute; top: 10px; left: 10px; background: rgba(0,255,204,0.1); color: #00ffcc; padding: 5px 10px; border-radius: 5px; font-size: 0.8em; font-weight: bold; pointer-events: none;}
+        .instrucciones { flex: 1.2; min-width: 350px; background: #2a2a2a; padding: 25px; border-radius: 10px; line-height: 1.6; }
+        .instrucciones h2 { color: #00ffcc; border-bottom: 1px solid #444; padding-bottom: 10px; margin-top: 0; }
+        .instrucciones h3 { color: #aaa; margin-top: 25px; }
         .instrucciones li { margin-bottom: 15px; }
+        .info-panel { background: rgba(255,255,255,0.05); border-radius: 5px; padding: 15px; margin-top: 20px; }
+        .info-panel p { margin: 0 0 10px 0; font-style: italic;}
         model-viewer { width: 100%; height: 500px; --poster-color: transparent; }
     </style>
 </head>
@@ -23,29 +27,63 @@
         <a href="index.html">← Volver al Inicio</a>
     </nav>
 
-    <h1>Instrucciones de Diseño: Guante de Cosplay</h1>
+    <h1>Instrucciones de Diseño: Guante de Cosplay (Estilo Clásico)</h1>
     
     <div class="container">
         <div class="visor-3d">
+            <span class="visor-label">MODELO REAL GENERADO</span>
             <model-viewer 
                 src="guantefinal.glb" 
-                alt="Render 3D interactivo del guante" 
+                alt="Render 3D interactivo de tu guante" 
                 auto-rotate 
                 camera-controls>
             </model-viewer>
         </div>
 
         <div class="instrucciones">
-            <h2>Guía de Fabricación Desde Cero</h2>
+            <h2>Guía de Fabricación: Paso a Paso (Desde Cero)</h2>
+            <p>Este tutorial está optimizado para recrear fielmente el diseño de guante de cinco dedos completos con puño independiente que se muestra en el visor 3D.</p>
+            
+            <h3>Fase 1: Preparación y Medidas Reales</h3>
             <ol>
-                <li><strong>Toma de Medidas:</strong> Mide el largo de tu mano desde la muñeca hasta la punta del dedo medio, y el contorno completo de la palma a la altura de los nudillos. Estas medidas serán tu base para evitar que el guante quede chico o gigante.</li>
-                <li><strong>Cálculo de Materiales:</strong> Para un guante de tela cómodo y realista, un trozo de **50x50 cm** de tela elástica (como spandex o tecno-bucle) por mano es suficiente para cubrir errores. Si vas a agregar placas decorativas sencillas en los nudillos o puños, un pliego pequeño de Goma Eva de **2 mm** o **4 mm** bastará.</li>
-                <li><strong>Ajuste de Escala en Blender:</strong> Importa el modelo base en Blender. Usa las herramientas de transformación (Tecla **S**) para ajustar el tamaño del objeto 3D a las medidas reales de tu mano en centímetros. Mantén los diseños de costura y detalles sencillos en el modelado para que cualquier persona común pueda replicarlos sin herramientas expertas.</li>
-                <li><strong>Traspaso a Patrón y Corte:</strong> Utiliza las vistas del modelo 3D para dibujar el contorno del guante en papel. Al traspasar el diseño a la tela, deja siempre un margen de **1 cm** extra alrededor de cada dedo para las costuras; de lo contrario, los dedos quedarán demasiado estrechos al coser.</li>
-                <li><strong>Ensamble y Costura Sencilla:</strong> Cose primero los bordes de los dedos desde las puntas hacia la base de la mano. Una vez armada la estructura base de tela, pega o cose los detalles decorativos planos sobre el dorso del guante para lograr un acabado detallado pero fácil de confeccionar.</li>
+                <li><strong>Toma de Medidas de Precisión:</strong> Para este diseño exacto, necesitas tres medidas clave de tu propia mano:
+                    <ul>
+                        <li><strong>Largo Total:</strong> Desde la base de la muñeca hasta la punta de tu dedo más largo (generalmente el medio).</li>
+                        <li><strong>Contorno de Palma:</strong> Circunferencia completa de la palma de tu mano, justo por debajo de los nudillos.</li>
+                        <li><strong>Ancho de Pulgar:</strong> El ancho de tu pulgar en su base.</li>
+                    </ul>
+                </li>
+                <li><strong>Cálculo de Materiales (Manufactura Real):</strong> Basado en el modelo:
+                    <ul>
+                        <li><strong>Tela Principal (Dorso y Palma):</strong> Necesitas un pliego de tela de aproximadamente **50x60 cm** por mano. Si usas cuero sintético, poliéster grueso o gabardina, obtendrás el aspecto liso de las imágenes.</li>
+                        <li><strong>Tela para el Puño:</strong> Para replicar la textura "acanalada" o elástica que se ve en la *Imagen de la muñeca (cuff)*, necesitas un trozo de **tela de punto acanalado (rib knit)** o tela elástica (spandex) de **20x30 cm**.</li>
+                    </ul>
+                </li>
             </ol>
-            <hr style="border: 0; border-top: 1px solid #444; margin: 20px 0;">
-            <p>💡 <strong>Instrucciones del Visor:</strong> Haz clic izquierdo y arrastra sobre el modelo 3D para rotarlo en cualquier dirección. Usa la rueda del ratón para hacer zoom y examinar de cerca la distribución de las piezas y los detalles de Blender.</p>
+
+            <h3>Fase 2: Creación de Patrones y Escala</h3>
+            <ol>
+                <li><strong>Ajuste de Escala en Blender:</strong> Importa tu modelo `.GLB` en Blender. Usa las medidas que tomaste (Técnica: Tecla **S** para escalar) para que el modelo digital coincida en centímetros reales con tu mano. Esto es vital para un calce perfecto.</li>
+                <li><strong>Desplegado de Patrones (UV Unwrapping):</strong> Usa las herramientas de UV en Blender para "aplanar" tu modelo y crear patrones de costura. Necesitarás:
+                    <ul>
+                        <li>Un patrón para el **Dorso (Imagen Frontal/Arriba)**.</li>
+                        <li>Un patrón para la **Palma (Imagen Inferior/Abajo)**, que incluye la abertura del pulgar.</li>
+                        <li>Patrones para los **Dedos e Interdedos** (piezas laterales delgadas o "fuelles").</li>
+                        <li>Un patrón rectangular para el **Puño independiente (Imagen Cuff)**.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Fase 3: Manufactura y Ensamble</h3>
+            <ol>
+                <li><strong>Corte y Margen de Costura:</strong> Al traspasar los patrones a la tela principal, deja siempre un **margen de costura de 1 cm** extra alrededor de cada pieza de dedo y la palma. Si no lo haces, los dedos quedarán demasiado estrechos para entrar.</li>
+                <li><strong>Costura de Dedos y Palma:</strong> Cose primero los bordes de los dedos desde las puntas hacia la base de la mano. Une el patrón del dorso al patrón de la palma. Luego, cose los costados de la mano.</li>
+                <li><strong>Attachment del Puño (El toque final):</strong> *Mirando tu imagen de la muñeca (cuff)*, el puño es una pieza separada. Crea un tubo con la tela de punto acanalado. Cósalo a la abertura inferior del guante, estirándolo ligeramente mientras coses para que ajuste a tu muñeca sin apretar.</li>
+            </ol>
+
+            <div class="info-panel">
+                <p>💡 <strong>Consejo del Visor:</strong> Haz clic izquierdo y arrastra sobre el modelo para rotarlo 360 grados. Revisa cómo se unen los dedos en el dorso vs. la palma para entender la anatomía de tu propio patrón.</p>
+            </div>
         </div>
     </div>
 
