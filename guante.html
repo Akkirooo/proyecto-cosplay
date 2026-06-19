@@ -11,7 +11,9 @@
         nav a { color: #00ffcc; text-decoration: none; font-weight: bold; }
         .container { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
         .visor-3d { flex: 1; min-width: 350px; background: #000; border-radius: 10px; border: 1px solid #444; }
-        .instrucciones { flex: 1; min-width: 350px; background: #2a2a2a; padding: 25px; border-radius: 10px; }
+        .instrucciones { flex: 1; min-width: 350px; background: #2a2a2a; padding: 25px; border-radius: 10px; line-height: 1.6; }
+        .instrucciones h2 { color: #00ffcc; border-bottom: 1px solid #444; padding-bottom: 10px; }
+        .instrucciones li { margin-bottom: 15px; }
         model-viewer { width: 100%; height: 500px; --poster-color: transparent; }
     </style>
 </head>
@@ -34,13 +36,16 @@
         </div>
 
         <div class="instrucciones">
-            <h2>Paso a Paso del Proyecto</h2>
+            <h2>Guía de Fabricación Desde Cero</h2>
             <ol>
-                <li><strong>Dimensionamiento:</strong> Escalado del modelo tomando como referencia las medidas reales de la mano para asegurar un calce correcto antes de la fabricación.</li>
-                <li><strong>Articulación de Piezas:</strong> Segmentación del guante en piezas independientes (dorso, palmas y falanges) para permitir la movilidad.</li>
-                <li><strong>Detalles de Superficie:</strong> Esculpido digital en Blender para simular texturas de tela, costuras o placas rígidas en los nudillos.</li>
+                <li><strong>Toma de Medidas:</strong> Mide el largo de tu mano desde la muñeca hasta la punta del dedo medio, y el contorno completo de la palma a la altura de los nudillos. Estas medidas serán tu base para evitar que el guante quede chico o gigante.</li>
+                <li><strong>Cálculo de Materiales:</strong> Para un guante de tela cómodo y realista, un trozo de **50x50 cm** de tela elástica (como spandex o tecno-bucle) por mano es suficiente para cubrir errores. Si vas a agregar placas decorativas sencillas en los nudillos o puños, un pliego pequeño de Goma Eva de **2 mm** o **4 mm** bastará.</li>
+                <li><strong>Ajuste de Escala en Blender:</strong> Importa el modelo base en Blender. Usa las herramientas de transformación (Tecla **S**) para ajustar el tamaño del objeto 3D a las medidas reales de tu mano en centímetros. Mantén los diseños de costura y detalles sencillos en el modelado para que cualquier persona común pueda replicarlos sin herramientas expertas.</li>
+                <li><strong>Traspaso a Patrón y Corte:</strong> Utiliza las vistas del modelo 3D para dibujar el contorno del guante en papel. Al traspasar el diseño a la tela, deja siempre un margen de **1 cm** extra alrededor de cada dedo para las costuras; de lo contrario, los dedos quedarán demasiado estrechos al coser.</li>
+                <li><strong>Ensamble y Costura Sencilla:</strong> Cose primero los bordes de los dedos desde las puntas hacia la base de la mano. Una vez armada la estructura base de tela, pega o cose los detalles decorativos planos sobre el dorso del guante para lograr un acabado detallado pero fácil de confeccionar.</li>
             </ol>
-            <p><i>Consejo: Haz clic izquierdo y arrastra sobre el modelo para rotarlo; usa la rueda del ratón para hacer zoom en los detalles.</i></p>
+            <hr style="border: 0; border-top: 1px solid #444; margin: 20px 0;">
+            <p>💡 <strong>Instrucciones del Visor:</strong> Haz clic izquierdo y arrastra sobre el modelo 3D para rotarlo en cualquier dirección. Usa la rueda del ratón para hacer zoom y examinar de cerca la distribución de las piezas y los detalles de Blender.</p>
         </div>
     </div>
 
