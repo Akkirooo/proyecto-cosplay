@@ -6,12 +6,19 @@
     <title>Tutorial: Espada 3D</title>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #1a1a1a; color: white; padding: 20px; }
+        body { font-family: Arial, sans-serif; background-color: #1a1a1a; color: white; padding: 20px; margin: 0; }
         nav { margin-bottom: 20px; }
         nav a { color: #00ffcc; text-decoration: none; font-weight: bold; }
         .container { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
-        .visor-3d { flex: 1; min-width: 350px; background: #000; border-radius: 10px; border: 1px solid #444; }
-        .instrucciones { flex: 1; min-width: 350px; background: #2a2a2a; padding: 25px; border-radius: 10px; }
+        .visor-3d { flex: 1; min-width: 350px; background: #000; border-radius: 10px; border: 1px solid #444; position: relative;}
+        .visor-label { position: absolute; top: 10px; left: 10px; background: rgba(0,255,204,0.1); color: #00ffcc; padding: 5px 10px; border-radius: 5px; font-size: 0.8em; font-weight: bold; pointer-events: none;}
+        .instrucciones { flex: 1.5; min-width: 350px; background: #2a2a2a; padding: 25px; border-radius: 10px; line-height: 1.6; }
+        .instrucciones h2 { color: #00ffcc; border-bottom: 1px solid #444; padding-bottom: 10px; margin-top: 0; }
+        .instrucciones h3 { color: #aaa; margin-top: 25px; }
+        .instrucciones li { margin-bottom: 15px; }
+        .materials-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; background: rgba(255,255,255,0.05); border-radius: 5px; padding: 15px; margin-bottom: 20px;}
+        .materials-list li { margin-bottom: 5px; list-style-type: none; border-left: 3px solid #00ffcc; padding-left: 10px;}
+        .warning-box { background: rgba(255, 68, 68, 0.1); color: #ff4444; border: 1px solid #ff4444; border-radius: 5px; padding: 15px; margin-top: 20px; font-size: 0.9em;}
         model-viewer { width: 100%; height: 500px; --poster-color: transparent; }
     </style>
 </head>
@@ -21,26 +28,65 @@
         <a href="index.html">← Volver al Inicio</a>
     </nav>
 
-    <h1>Instrucciones de Diseño: Espada de Cosplay</h1>
+    <h1>Instrucciones de Diseño: Espada de Cosplay (Estilo Fantasía Clásica)</h1>
     
     <div class="container">
         <div class="visor-3d">
+            <span class="visor-label">MODELO REAL GENERADO</span>
             <model-viewer 
                 src="espada.glb" 
-                alt="Render 3D interactivo de la espada" 
+                alt="Render 3D interactivo de tu espada" 
                 auto-rotate 
                 camera-controls>
             </model-viewer>
         </div>
 
         <div class="instrucciones">
-            <h2>Paso a Paso del Proyecto</h2>
+            <h2>Guía de Fabricación: Paso a Paso (Desde Cero)</h2>
+            <p>Este tutorial está optimizado para recrear fielmente la espada bastarda de fantasía con puño acanalado y detalles orgánicos que se muestra en el visor 3D.</p>
+            
+            <h3>Fase 1: Preparación y Materiales Precisos</h3>
             <ol>
-                <li><strong>Modelado de Referencia:</strong> Creación de la malla poligonal en Blender basándose en conceptos del personaje.</li>
-                <li><strong>Optimización (Retopología):</strong> Reducción de polígonos para asegurar un rendimiento fluido en entornos web.</li>
-                <li><strong>Texturizado:</strong> Aplicación de materiales detallados (puedes cambiar este texto por tus instrucciones reales).</li>
+                <li><strong>Toma de Medidas de Precisión:</strong> Para este diseño exacto, necesitas tres medidas clave de tu propia mano:
+                    <ul>
+                        <li><strong>Longitud Total:</strong> Define si la espada será de mano y media (aprox. 110-120 cm) o dos manos (120+ cm), basándote en tu estatura (generalmente hasta tu cadera para total, o axila para dos manos).</li>
+                        <li><strong>Longitud del Puño:</strong> Mide el ancho de tus dos manos juntas. El puño acanalado debe ser ligeramente más largo que esta medida para el calce perfecto que se ve en la *Imagen del puño*.</li>
+                        <li><strong>Ancho de Hoja:</strong> Determina el ancho en centímetros del recazo (la base liso de la hoja).</li>
+                    </ul>
+                </li>
+                <li><strong>Cálculo de Materiales (Manufactura Real):</strong> Basado en el modelo liso y metálico:
+                    <ul>
+                        <li><strong>Núcleo Estructural:</strong> Un tubo de PVC de **20 mm** de diámetro o una varilla de fibra de vidrio/carbono, que cubra desde el pomo hasta 2/3 de la hoja para estabilidad estructural.</li>
+                        <li><strong>Tela Principal (Hoja, Guarda, Pomo):</strong> Necesitas EVA foam de varios grosores. Sugerimos: EVA foam de **10 mm** para las capas principales de la hoja, EVA foam de **20 mm** (o capas pegadas) para la guarda y pomo, y Goma Eva de **2 mm** para los detalles de la textura.</li>
+                    * **Materiales para Detalles Únicos:**
+                        * **Protuberancias Orgánicas:** Alambre de aluminio maleable o Worbla, cubierto con *foam clay* (arcilla de espuma) para darle el aspecto de ramas orgánicas que se ve en la base de la guarda y hoja.</li>
+                    </ul>
+                </li>
             </ol>
-            <p><i>Consejo: Haz clic izquierdo y arrastra sobre el modelo para rotarlo; usa la rueda del ratón para hacer zoom en los detalles.</i></p>
+
+            <h3>Fase 2: Construcción Base y Escala</h3>
+            <ol>
+                <li><strong>Ajuste de Escala en Blender:</strong> Importa tu modelo `.GLB` en Blender. Usa las medidas que tomaste (Técnica: Tecla **S** para escalar) para que el modelo digital coincida en centímetros reales con tus preferencias de tamaño. Esto es vital para un calce perfecto.</li>
+                <li><strong>Creación de Patrones (Blueprints):</strong> Genera vistas planas de tu modelo en Blender (vistas ortográficas: superior, frontal, lateral) y imprímelas en escala 1:1 o dibújalas en papel. Estos serán tus patrones de corte.</li>
+            </ol>
+
+            <h3>Fase 3: Manufactura y Detallado Visual</h3>
+            <ol>
+                <li><strong>Corte y Ensamblado Base:</strong> Traspasa tus patrones a la EVA foam. Cose primero los bordes de los dedos desde las puntas hacia la base de la mano. Une el patrón del dorso al patrón de la palma. Luego, cose los costados de la mano.</li>
+                <li><strong>Attachment del Puño (El toque final):</strong> *Mirando tu imagen de la muñeca (cuff)*, el puño es una pieza separada. Crea un tubo con la tela de punto acanalado. Cósalo a la abertura inferior del guante, estirándolo ligeramente mientras coses para que ajuste a tu muñeca sin apretar.</li>
+                * **Reproducción del Puño Acanalado (Rib Knit Effect):** *Basado en la Imagen Inferior (Hilt Close-up)*, este es un detalle clave. Tienes dos opciones principales:
+                    * **Enrollado con Tiras de Goma Eva:** Envuelve tiras finas de Goma Eva de **2 mm** alrededor del tubo base del puño, asegurándolas con pegamento de contacto. Este método replica la textura acanalada visible.
+                    * **Moldeado con Foam Clay:** Aplica foam clay (arcilla de espuma) sobre el puño liso y usa una herramienta de modelado para esculpir las líneas acanaladas directamente, logrando un acabado más limpio y preciso.</li>
+            </ol>
+
+            <h3>Fase 4: Acabado y Pintura</h3>
+            <ol>
+                <li><strong>Pintura Liso-Metálico (Basado en el Render):</strong> Para lograr el aspecto liso y metálico de tus capturas, aplica una capa base de pintura negra brillante. Luego, usa pintura acrílica plateada o spray metálico. Utiliza técnicas de *weathering* (envejecido) con óleos oscuros para resaltar las líneas de la guarda, pomo y puño.</li>
+            </ol>
+
+            <div class="warning-box">
+                <p>💡 **Consejo del Visor:** Haz clic izquierdo y arrastra sobre el modelo para rotarlo 360 grados. Revisa cómo se unen los dedos en el dorso vs. la palma para entender la anatomía de tu propio patrón.</p>
+            </div>
         </div>
     </div>
 
